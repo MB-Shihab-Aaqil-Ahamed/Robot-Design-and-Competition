@@ -12,8 +12,59 @@ In the simulation task, the robot is designed and tested within the Webots Open-
 
 - Line Following
 - Segmented Wall Following
-- Dotted Line Following
+- Slotted Line Following
 - Chess Board Arena Challenge
+
+## Subtask Details
+
+### Line Following
+
+The robot must accurately follow a white line on a black surface. The path may include straight and curved lines.
+
+![Line Following](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Line_Following.png)
+
+
+### Segmented Wall Following
+
+The robot should follow a segmented wall with varying shapes, such as straight or curved segments.
+![Segmented wall following](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Segmented_Wall_Following.png)
+
+
+### Slotted Line Following
+
+The robot must follow a colored dotted line path. The path has two options, and the correct one should be chosen based on a random color assigned at the beginning of the task.
+![Slotted line](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Slotted_Line.png)
+
+
+### Chess Board Arena Challenge
+
+The robot plays the role of a black rook in a chess game. It needs to deliver checkmate in one move and open a secret chamber door on a virtual chessboard.
+![Chess board area](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Chess_Board_Arena.png)
+
+
+## Broken Bridge Crossing
+
+After completing the Chess Board Puzzle, the robot's next challenge is to cross a broken bridge. The bridge is divided into two sections, each with a hole. The robot must place two blocks to cover these holes and create a path to the destination square. The two bloks can find in the chamber after we complete the sub task on chess board arena.
+
+### Specifications
+
+- The width of the bridge is 40 cm.
+- Each hole measures 11 cm x 15 cm with the shorter side parallel to the guide line.
+- The holes have a depth of 10.5 cm.
+- The robot should carry two cubes, each with dimensions 10 cm x 10 cm x 10 cm and a weight of 150g.
+
+### Crossing Procedure
+
+1. The robot needs to approach the bridge and position the cubes to cover the holes.
+2. The blocks must be carefully placed to ensure stability and proper coverage.
+3. Once the holes are covered, the robot will be able to cross the bridge safely.
+4. The robot's objective is to stop inside the white destination square after crossing the bridge.
+
+## Sample Task Overview
+
+For a visual representation of the subtasks and their order, refer to the provided diagram below:
+
+![Sample Task Overview](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Webot_Arena.png)
 
 The highlight of this task is the chess board challenge, where the robot must place the black rook and  deliver checkmate the white king in one move to open a secret chamber.
 
