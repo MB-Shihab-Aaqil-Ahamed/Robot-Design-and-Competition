@@ -108,11 +108,10 @@ The repository is structured as follows:
 
 ## Repository Structure
 
-- `simulation/`: Contains code and resources for the simulation task.
-- `physical/`: Contains code and resources for the physical task.
+- `Simulation Task/`: Contains code and resources for the simulation task.
+- `Physical Task/`: Contains code and resources for the physical task.
 - `docs/`: Documentation and diagrams related to the project.
 - `src/`: Source code for the robot's control and decision-making.
-- `resources/`: Additional resources such as images and models.
 
 ## Getting Started
 
