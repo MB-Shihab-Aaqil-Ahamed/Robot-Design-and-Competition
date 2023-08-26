@@ -73,6 +73,10 @@ The highlight of this task is the chess board challenge, where the robot must pl
 
 ### Physical Task
 
+#### Physical Task Overview
+
+![Physical Task Overview](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Task.png)
+
 In the physical task, the real robot is deployed to complete a set of challenges. These challenges include:
 
 - Line Maze Exploration
@@ -81,6 +85,26 @@ In the physical task, the real robot is deployed to complete a set of challenges
 - Blind Box Challenge
 
 The physical task presents obstacles such as line maze navigation, precise wall following, and decision-making in the blind box challenge.
+
+### Line Maze
+Exploration Stage
+In this stage, the robot starts from the white starting square. It embarks on a journey to explore the maze, using 90-degree turns at intersections. The goal is to reach the white checkpoint square on the opposite side of the maze. Once the checkpoint is reached, the exploration stage concludes.
+
+### Speeding Stage
+Having completed the exploration, the robot employs the gathered data to compute the shortest path back to the starting square. The time it takes for the robot to return to the starting square influences its score in this stage.
+
+### Curved Wall
+The robot leaves the starting square of the maze to follow a curved wall, which is situated to the robot's left. The robot must navigate the wall without crossing the red line that marks the boundary. A penalty will be incurred if the robot crosses the line. The curved wall leads to the entrance of the blind box challenge.
+
+### Blind Box
+Within the blind box, the robot encounters three openings: an entrance, a wrong exit, and a correct exit. The robot's task is to exit through the correct opening and follow a line on the floor to reach the final destination square. Collisions with the blind box walls trigger penalties, so precise control is essential.
+
+### Code Organization
+The repository is structured as follows:
+
+- Line following test code
+- Wall following test code
+- Fully structured code
 
 ## Repository Structure
 
