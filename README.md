@@ -27,18 +27,21 @@ The robot must accurately follow a white line on a black surface. The path may i
 ### Segmented Wall Following
 
 The robot should follow a segmented wall with varying shapes, such as straight or curved segments.
+
 ![Segmented wall following](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Segmented_Wall_Following.png)
 
 
 ### Slotted Line Following
 
 The robot must follow a colored dotted line path. The path has two options, and the correct one should be chosen based on a random color assigned at the beginning of the task.
+
 ![Slotted line](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Slotted_Line.png)
 
 
 ### Chess Board Arena Challenge
 
 The robot plays the role of a black rook in a chess game. It needs to deliver checkmate in one move and open a secret chamber door on a virtual chessboard.
+
 ![Chess board area](https://github.com/MB-Shihab-Aaqil-Ahamed/Robot-Design-and-Competition/blob/master/Images/Chess_Board_Arena.png)
 
 
