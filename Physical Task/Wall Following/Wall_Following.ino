@@ -1,5 +1,3 @@
-#include <Servo.h>
-int
 left_motor_forward=4,
 left_motor_backward=8,
 right_motor_forward=2,
@@ -7,14 +5,18 @@ right_motor_backward=12,
 left_motor_pwm=10,
 right_motor_pwm=6;
 
+float Kp = 30;
+float Kd = 10;
+float Ki = 0; 
+double error = 0;
+double setDistance=5;
+double previousError=0;
+
 #define trigPin 5
 #define echoPin 3
 
 int dangerThresh = 5; //threshold for obstacles (in cm)
 int leftDistance, rightDistance; //distances on either side
-
-Servo panMotor;
-
 
 void setup()
 {
@@ -28,30 +30,45 @@ void setup()
   panMotor.write(90); //set PING))) pan to center
   delay(1000);
 }
-void loop()
-{
-  int distanceFwd = distance_calculation();
-  if (distanceFwd>dangerThresh) //if path is clear
-    {
-     forward(); 
-    }
-  else //if path is blocked
-  {
-    Stop();
-    panMotor.write(0); 
-    delay(500);
-    rightDistance = distance_calculation(); //scan to the right
-    delay(500);
-    panMotor.write(180);
-    delay(500);
-    leftDistance = distance_calculation(); //scan to the left
-    delay(500);
-    panMotor.write(90); //return to center
-    delay(100);
-    compareDistance();
+
+void loop(){
+  currentDistance = read_SONAR();
+
+  //PID
+  error=0;
+   error = setDistance - currentDistance;
+
+   P = error;
+   I = I + error;
+   D = error - previousError;
+
+  previousError = error;
+
+  speedAdjust = Kp*P + Ki*I + Kd*D;
+
+  LMotorSpeed = MotorBaseSpeed + speedAdjust;
+  RMotorSpeed = MotorBaseSpeed - speedAdjust;
+  
+  if (LMotorSpeed<0)  {LMotorSpeed = 0;}
+  if (RMotorSpeed<0)  {RMotorSpeed = 0;}
+  if (LMotorSpeed>MaxSpeed) {LMotorSpeed = MaxSpeed;}
+  if (RMotorSpeed>MaxSpeed) {RMotorSpeed = MaxSpeed;}  
+  set_speed();
   }
 
-}
+
+int read_SONAR(){
+  distance2=sonar_2.ping_cm();
+  distance3=sonar_3.ping_cm();
+  return (distance2+distance3)/2;
+  }
+
+
+int read_FRONT_SONAR(){
+  distance1=sonar_1.ping_cm(); //front distance
+  return (distance1);
+  }
+
 void forward()
 {
   digitalWrite(left_motor_forward,1);
